@@ -18,11 +18,11 @@ import todoDataService from "../services/todos.services";
 
 let newArr = JSON.parse(localStorage.getItem("data"));
 
-const Todo = () => {
+const Todo = (props) => {
   const [todo, setTodo] = useState("");
   const [obj, setObj] = useState({
     activity: todo,
-    lineThrough: false,
+   
   });
   const [update, setUpdate] = useState(false);
   const [activityArr, setActivityArr] = useState([]);
@@ -37,23 +37,23 @@ const Todo = () => {
     }
   }, []);
   const getTodo = async () => {
-    const data = await todoDataService.getAllTodos();
+    const data = await todoDataService.getAllTodos(props.uid);
     setActivityArr(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
   };
   const handleAdd = async () => {
     if (update === false && todo !== "") {
       try {
-        await todoDataService.addBook(obj);
+        await todoDataService.addBook(obj,props.uid);
         setTodo("");
       } catch (err) {
         console.log("");
       }
       getTodo();
     } else if (todo !== "") {
-      let updatedTodo = { activity: todo, lineThrough: "false" };
+      let updatedTodo = { activity: todo };
       document.getElementById(bookId).innerText = todo;
-      await todoDataService.updateTodo(bookId, updatedTodo);
-      await todoDataService.getAllTodos();
+      await todoDataService.updateTodo(bookId, updatedTodo,props.uid);
+      getTodo()
       setTodo("");
       setUpdate(false);
     }
@@ -64,7 +64,7 @@ const Todo = () => {
     setUpdate(true);
   };
   const handleDelete = async (id) => {
-    await todoDataService.deleteTodo(id);
+    await todoDataService.deleteTodo(id,props.uid);
     getTodo();
   };
   return (

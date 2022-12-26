@@ -10,20 +10,20 @@ import {
 } from "firebase/firestore";
 
 const todoCollectionRef = collection(db, "todos");
-
 class todoDataService {
-  addBook = (newBook) => {
-    return addDoc(todoCollectionRef, newBook);
+  addBook = (newBook, uid) => {
+    return addDoc(collection(db, "todos", uid, "clients"), newBook);
   };
-  getAllTodos = () => {
-    return getDocs(todoCollectionRef);
+  getAllTodos = (uid) => {
+    return getDocs(collection(db, "todos", uid, "clients"));
   };
-  updateTodo = (id, updatedTodo) => {
-    const todoDoc = doc(db, "todos", id);
+  updateTodo = (id, updatedTodo, uid) => {
+    console.log(updatedTodo);
+    const todoDoc = doc(db, "todos", uid, "clients", id);
     return updateDoc(todoDoc, updatedTodo);
   };
-  deleteTodo = (id) => {
-    const todoDoc = doc(db, "todos", id);
+  deleteTodo = (id,uid) => {
+    const todoDoc = doc(db, "todos", uid, "clients", id);
     return deleteDoc(todoDoc);
   };
   getTodo = (id) => {

@@ -1,0 +1,155 @@
+
+#heading_login{
+    color: rgb(36, 77, 160);
+    padding-bottom: 10px;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+
+#image_container{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+}
+
+#login_page_container{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    padding: 80px;
+}
+
+#login_card{
+    padding-left: 8.33%;
+    padding-right: 8.33%;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-radius: 6px;
+    width: 100%;
+}
+
+@media screen and (max-width: 1025px) {
+    #image_container{
+        display: flex;
+        width: 40%;
+        justify-content: center;
+    }
+    
+    #login_page_container{
+        display: flex;
+        width: 60%;
+        justify-content: center;
+        padding: 64px;
+    }
+      }
+
+      
+@media screen and (max-width: 769px) {
+    #image_container{
+        display: flex;
+        width: 25%;
+        justify-content: center;
+    }
+    
+    #login_page_container{
+        display: flex;
+        width: 75%;
+        justify-content: center;
+        padding: 48px;
+    }
+      }
+
+      @media screen and (max-width: 426px) {
+        #image_container{
+            display: none;
+            
+        }
+        
+        #login_page_container{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            padding: 32px;
+        }
+        #login_card{
+            padding-left: 32px;
+            padding-right: 32px;
+            padding-top: 24px;
+            padding-bottom: 24px;
+            border-radius: 16px;
+            width: 100%;
+        }
+        
+          }
+
+          @media screen and (max-width: 376px) {
+            #image_container{
+                display: none;
+                
+            }
+            
+            #login_page_container{
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                padding: 24px;
+            }
+            #login_card{
+                padding-left: 32px;
+                padding-right: 32px;
+                padding-top: 24px;
+                padding-bottom: 24px;
+                border-radius: 16px;
+                width: 100%;
+            }
+            
+              }
+              :where(.css-dev-only-do-not-override-26rdvq).ant-form-item .ant-form-item-explain-error{
+                font-size: 14px;
+                font-family: "Milliard";
+              }
+              :where(.css-26rdvq).ant-form-item .ant-form-item-label >label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before{
+                display: none;
+              }
+              :where(.css-26rdvq).ant-form-item .ant-form-item-explain-error{
+                color: #ff4d4f;
+                font-size: 14px;
+                font-family: "Milliard";
+              }
+              hr:not([size]){
+                    margin: 0px;
+    color: rgb(36, 77, 160);
+    background-color: currentColor;
+    border: 0;
+    opacity: .1;
+              }
+              :where(.css-26rdvq).ant-modal .ant-modal-close-x{
+                display: none;
+              }
+              :where(.css-dev-only-do-not-override-26rdvq).ant-modal .ant-modal-close-x{
+                display: none;
+              }
+              :where(.css-26rdvq).ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector{
+                border-radius: 2px;
+              }
+              @media (min-width: 1200px){
+                .css-mvs481{
+                  color: #ff4d4f;
+                }
+              }
+
+              .css-1mulnyo-MuiListItemIcon-root:hover{
+                color: white;
+              }
+              .css-1rs1y46-MuiListItemText-root:hover{
+                color: white;
+              }
+              
+
+              .css-1l9osrx-MuiListItem-root:hover .css-1mulnyo-MuiListItemIcon-root .css-1rs1y46-MuiListItemText-root{
+                color: white;
+              }
+
+            
+            
